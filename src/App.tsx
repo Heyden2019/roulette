@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { CaseContent } from "./components/CaseContent";
+import { Roulette } from "./components/Roulette";
+import "./scss/globals.scss";
+import "./scss/typography.scss";
+
+export interface CaseItem {
+  name: string;
+  model: string;
+  color: string;
+  image: string;
+  id: string;
+  price: number;
+}
 
 function App() {
+  const [cases, setCases] = useState<CaseItem[]>([]);
+
+  useEffect(() => {
+    const asyncFn = async () => {
+      const cards = (await (
+        await fetch("/data/items.json", {
+          method: "GET",
+        })
+      ).json()) as unknown as CaseItem[];
+
+      setCases(cards);
+    };
+
+    asyncFn();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Roulette items={cases} />
+      <CaseContent cases={cases} />
     </div>
   );
 }

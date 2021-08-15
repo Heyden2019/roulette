@@ -1,0 +1,58 @@
+@import '../../scss/colors.scss';
+
+.roulette-item {
+    padding: 20px 22px 27px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 227px;
+    width: 200px;
+
+    &__line {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 70px;
+    }
+
+    &__price {
+        color: $color--white;
+        align-self: flex-end;
+        margin-bottom: 17px;
+    }
+
+    &__model {
+        color: $color--white;
+        margin-top: auto;
+        margin-bottom: 3px;
+        transform: translateZ(1px);
+    }
+
+    &__name {
+        color: $color--gray-light;
+        transform: translateZ(1px);
+    }
+
+    &__background-image {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+
+        &-wrapper {
+            position: absolute;
+            top: 47px;
+            bottom: 83px;
+            display: flex;
+            left: 51px;
+            right: 51px;
+        }
+    }
+
+    &__background-image {
+        opacity: 0.2;
+    }
+}
+
+

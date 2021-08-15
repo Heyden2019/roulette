@@ -1,0 +1,234 @@
+[
+    {
+        "id": "Bayonet",
+        "name": "Road Rash",
+        "model": "Bayonet",
+        "image": "bayonet.png",
+        "color": "#CB4BF8",
+        "price": "99"
+    },
+    {
+        "id": "desert eagle",
+        "name": "Damascus Steel",
+        "model": "desert eagle",
+        "image": "desert eagle.png",
+        "color": "#CB4BF8",
+        "price": "12"
+    },
+    {
+        "id": "famas",
+        "name": "Hand Cannon",
+        "model": "FAMAS",
+        "image": "famas.png",
+        "color": "#CB4BF8",
+        "price": "42"
+    },
+    {
+        "id": "galil ar",
+        "name": "Golden Koi",
+        "model": "Galil AR",
+        "image": "galil ar.png",
+        "color": "#4B90F8",
+        "price": "45"
+    },
+    {
+        "id": "glock-18",
+        "name": "Safari Mesh",
+        "model": "Glock-18",
+        "image": "glock-18.png",
+        "color": "#F86A4B",
+        "price": "567"
+    },
+    {
+        "id": "gut knife",
+        "name": "Full Stop",
+        "model": "Gut Knife",
+        "image": "gut knife.png",
+        "color": "#CB4BF8",
+        "price": "65"
+    },
+    {
+        "id": "huntsman knife",
+        "name": "Mosaico",
+        "model": "Huntsman Knife",
+        "image": "huntsman knife.png",
+        "color": "#CB4BF8",
+        "price": "98"
+    },
+    {
+        "id": "karambit",
+        "name": "Desert Warfare",
+        "model": "Karambit",
+        "image": "karambit.png",
+        "color": "#F89E4B",
+        "price": "99"
+    },
+    {
+        "id": "m4a4",
+        "name": "Supernova",
+        "model": "M4A4",
+        "image": "m4a4.png",
+        "color": "#CB4BF8",
+        "price": "34"
+    },
+    {
+        "id": "m9 bayonet",
+        "name": "Nuclear Garden",
+        "model": "M9 Bayonet",
+        "image": "m9 bayonet.png",
+        "color": "#CB4BF8",
+        "price": "99"
+    },
+    {
+        "id": "m249",
+        "name": "Ossified",
+        "model": "M249",
+        "image": "m249.png",
+        "color": "#F84B76",
+        "price": "23"
+    },
+    {
+        "id": "mac-10",
+        "name": "Master Piece",
+        "model": "MAC-10",
+        "image": "mac-10.png",
+        "color": "#CB4BF8",
+        "price": "12"
+    },
+    {
+        "id": "mag-7",
+        "name": "Black Limba",
+        "model": "MAG-7",
+        "image": "mag-7.png",
+        "color": "#CB4BF8",
+        "price": "65"
+    },
+    {
+        "id": "negev",
+        "name": "Cyrex",
+        "model": "Negev",
+        "image": "negev.png",
+        "color": "#CB4BF8",
+        "price": "46"
+    },
+    {
+        "id": "nomad",
+        "name": "Death Rattle",
+        "model": "Nomad",
+        "image": "nomad.png",
+        "color": "#F89E4B",
+        "price": "35"
+    },
+    {
+        "id": "nova",
+        "name": "The Kraken",
+        "model": "Nova",
+        "image": "nova.png",
+        "color": "#8A8A8A",
+        "price": "65"
+    },
+    {
+        "id": "mp9",
+        "name": "Contrast Spray",
+        "model": "MP9",
+        "image": "mp9.png",
+        "color": "#CB4BF8",
+        "price": "77"
+    },
+    {
+        "id": "p250",
+        "name": "Blood Tiger",
+        "model": "P250",
+        "image": "p250.png",
+        "color": "#CB4BF8",
+        "price": "65"
+    },
+    {
+        "id": "p2000",
+        "name": "Dark Age",
+        "model": "P2000",
+        "image": "p2000.png",
+        "color": "#CB4BF8",
+        "price": "56"
+    },
+    {
+        "id": "paracord knife",
+        "name": "Emerald Pinstripe",
+        "model": "Paracord Knife",
+        "image": "paracord knife.png",
+        "color": "#CB4BF8",
+        "price": "34"
+    },
+    {
+        "id": "sawed-off",
+        "name": "Condemned",
+        "model": "Sawed-Off",
+        "image": "sawed-off.png",
+        "color": "#CB4BF8",
+        "price": "45"
+    },
+    {
+        "id": "bayonet",
+        "name": "RoadRash",
+        "model": "bayonet",
+        "image": "bayonet.png",
+        "color": "#CB4BF8",
+        "price": "99"
+    },
+    {
+        "id": "scar-20",
+        "name": "Forest Leaves",
+        "model": "SCAR-20",
+        "image": "scar-20.png",
+        "color": "#CB4BF8",
+        "price": "56"
+    },
+    {
+        "id": "shadow-daggers",
+        "name": "Sage Spray",
+        "model": "Shadow Daggers",
+        "image": "shadow-daggers.png",
+        "color": "#CB4BF8",
+        "price": "34"
+    },
+    {
+        "id": "ssg 08",
+        "name": "Desert Storm",
+        "model": "SSG 08",
+        "image": "ssg 08.png",
+        "color": "#F84B76",
+        "price": "23"
+    },
+    {
+        "id": "survival knife",
+        "name": "Copper Galaxy",
+        "model": "Survival Knife",
+        "image": "survival knife.png",
+        "color": "#F86A4B",
+        "price": "25"
+    },
+    {
+        "id": "ump-45",
+        "name": "Bright Water",
+        "model": "UMP-45",
+        "image": "ump-45.png",
+        "color": "#F84B76",
+        "price": "16"
+    },
+    {
+        "id": "usp-s",
+        "name": "Royal Blue",
+        "model": "USP-S",
+        "image": "usp-s.png",
+        "color": "#CB4BF8",
+        "price": "37"
+    },
+    {
+        "id": "zeus x27",
+        "name": "Tornado",
+        "model": "Zeus x27",
+        "image": "zeus x27.png",
+        "color": "#CB4BF8",
+        "price": "38"
+    }
+]

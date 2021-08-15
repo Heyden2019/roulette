@@ -1,0 +1,70 @@
+@import '../../scss/colors.scss';
+@import '../../scss/common.scss';
+
+.roulette {
+    background-image: url('./images/bg.png');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__image {
+        max-width: 644px;
+    }
+
+    &__status {
+        color: $color--warning;
+
+        &.extra-padding {
+            padding-bottom: 245px;
+        }
+    }
+
+    &__main-wrapper {
+        position: relative;
+        margin-bottom: 90px;
+    }
+
+    &__items {
+        display: flex;
+        
+        &-wrapper {
+            position: relative;
+            max-width: 1400px;
+            width: 100%;
+            overflow-x: hidden;
+            filter: drop-shadow(0px 24px 109px rgba(0, 0, 0, 0.39));
+            background: linear-gradient(270deg, rgba(23, 24, 30, 0) 4.35%, #17181E 11.29%, #17181E 80.3%, rgba(23, 24, 30, 0) 92.73%);   
+            box-shadow: 0px 24px 109px rgba(0, 0, 0, 0.39);
+            
+            @media (max-width: $is-desktop) {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        }
+        
+        &-container {
+            width: 1400px;
+
+            @media (max-width: $is-desktop) {
+                transform: translateX(-200px);
+            }
+        }
+    }
+
+    &__win-card {
+        margin-top: 5px;
+        margin-bottom: 17px;
+    }
+
+    &__cursor-wrapper {
+        position: absolute;
+        top: -18px;
+        bottom: -18px;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        z-index: 3;
+    }
+}
