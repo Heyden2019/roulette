@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { CaseItem } from "../../App";
 import { WINNER_ID } from "../../constant";
 import { RouletteItem } from "../RouletteItem";
@@ -18,70 +18,74 @@ export const Roulette: React.FC<RouletteProps> = ({ items }) => {
   const winner = useRef<string | null>(null);
   const roulette = useRef<HTMLDivElement | null>(null);
 
-  const start = (
-    duration: number,
-    fromWinner: number,
-    isSlowdowned?: boolean
-  ) => {
-    const currentDuration = Math.max(100, duration);
-    const rouletteEl = roulette.current;
-    if (rouletteEl) {
-      const animation = rouletteEl.animate(
-        // Смещаем
-        [{ transform: "translateX(0px)" }, { transform: "translateX(-200px)" }],
-        {
-          duration: currentDuration,
-          iterations: 1,
-        }
-      );
-      animation.onfinish = () => {
-        if (rouletteEl) {
-          // Удаляем первый элемент и переносим его в конец
-          const firstEl = rouletteEl.children[0];
-          rouletteEl.removeChild(firstEl);
-          rouletteEl.appendChild(firstEl);
-
-          if (winner.current) {
-            // 2. Холостая прокрутка закончилась
-            if (
-              !isSlowdowned &&
-              rouletteEl.children[3].getAttribute("data-id") === winner.current
-            ) {
-              // 4. Попали на выигрышный элемент, разрешаем замедление
-              return start(currentDuration, fromWinner, true);
-            }
-
-            if (!isSlowdowned) {
-              // 3. Не попали на выйгрышный элемент, движемся быстро
-              return start(currentDuration, fromWinner, isSlowdowned);
-            }
-
-            if (fromWinner > 8) {
-              // 5. До конца далеко, скорость не сбавляем
-              fromWinner -= 1;
-
-              return start(currentDuration, fromWinner, isSlowdowned);
-            }
-
-            if (
-              rouletteEl.children[3].getAttribute("data-id") === winner.current
-            ) {
-              // 7. Попали на выйгрышный элемент и скорость уже медленная
-              // Точка выхода
-              const winning = items.find(({ id }) => id === WINNER_ID)!;
-              return setWinnig(winning);
-            }
-
-            // 6. Сбавляем скорость
-            return start(currentDuration + 75, fromWinner, isSlowdowned);
+  const start = useCallback(
+    (duration: number, fromWinner: number, isSlowdowned?: boolean) => {
+      const currentDuration = Math.max(100, duration);
+      const rouletteEl = roulette.current;
+      if (rouletteEl) {
+        const animation = rouletteEl.animate(
+          // Смещаем
+          [
+            { transform: "translateX(0px)" },
+            { transform: "translateX(-200px)" },
+          ],
+          {
+            duration: currentDuration,
+            iterations: 1,
           }
+        );
+        animation.onfinish = () => {
+          if (rouletteEl) {
+            // Удаляем первый элемент и переносим его в конец
+            const firstEl = rouletteEl.children[0];
+            rouletteEl.removeChild(firstEl);
+            rouletteEl.appendChild(firstEl);
 
-          // 1. Холостая прокрутка
-          return start(currentDuration - 25, fromWinner, isSlowdowned);
-        }
-      };
-    }
-  };
+            if (winner.current) {
+              // 2. Холостая прокрутка закончилась
+              if (
+                !isSlowdowned &&
+                rouletteEl.children[3].getAttribute("data-id") ===
+                  winner.current
+              ) {
+                // 4. Попали на выигрышный элемент, разрешаем замедление
+                return start(currentDuration, fromWinner, true);
+              }
+
+              if (!isSlowdowned) {
+                // 3. Не попали на выйгрышный элемент, движемся быстро
+                return start(currentDuration, fromWinner, isSlowdowned);
+              }
+
+              if (fromWinner > 8) {
+                // 5. До конца далеко, скорость не сбавляем
+                fromWinner -= 1;
+
+                return start(currentDuration, fromWinner, isSlowdowned);
+              }
+
+              if (
+                rouletteEl.children[3].getAttribute("data-id") ===
+                winner.current
+              ) {
+                // 7. Попали на выйгрышный элемент и скорость уже медленная
+                // Точка выхода
+                const winning = items.find(({ id }) => id === WINNER_ID)!;
+                return setWinnig(winning);
+              }
+
+              // 6. Сбавляем скорость
+              return start(currentDuration + 75, fromWinner, isSlowdowned);
+            }
+
+            // 1. Холостая прокрутка
+            return start(currentDuration - 25, fromWinner, isSlowdowned);
+          }
+        };
+      }
+    },
+    [items]
+  );
 
   useEffect(() => {
     if (items.length) {
@@ -90,7 +94,7 @@ export const Roulette: React.FC<RouletteProps> = ({ items }) => {
       }, WAIT);
       start(500, items.length);
     }
-  }, [items]);
+  }, [items, start]);
 
   return (
     <div className="roulette">

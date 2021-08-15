@@ -5,17 +5,17 @@ import "./case-content.scss";
 
 const CASE_TITLE = "СОДЕРЖИМОЕ КЕЙСА";
 
-interface CaseCard extends Omit<CaseItem, "price"> {}
+interface ICaseCard extends Omit<CaseItem, "price"> {}
 
 interface CaseContentProps {
-  cases: CaseCard[];
+  cases: ICaseCard[];
 }
 
 export const CaseContent: React.FC<CaseContentProps> = ({ cases }) => {
   return (
     <div className="case">
       <div className="case__title text-md text-bold">{CASE_TITLE}</div>
-      <img className="case__decore" src="/images/decore.png" />
+      <img className="case__decore" src="/images/decore.png" alt="decore" />
       <div className="case__content">
         {cases.map(({ color, image, model, name, id }) => (
           <div key={id} className="case__content-item">
